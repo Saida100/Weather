@@ -1,14 +1,18 @@
 package com.saida_aliyeva.weather;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -26,6 +30,7 @@ import retrofit2.Response;
  */
 public class DailyWeatherFragment extends Fragment {
     RVAdapter adapter;
+    String cityName;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -39,6 +44,7 @@ public class DailyWeatherFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        final TextView txtCityName=view.findViewById(R.id.cityName);
         final RecyclerView recyclerView=view.findViewById(R.id.recyclerView);
         LinearLayoutManager linearLayoutManager=new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(linearLayoutManager);
@@ -53,6 +59,9 @@ public class DailyWeatherFragment extends Fragment {
                         POJO pojo = new POJO();
                         if (response.body().getCod().equals("200")) {
                             pojo = response.body();
+                            cityName=pojo.getCity().getName();
+                            txtCityName.setText(cityName);
+
                             Log.e("pojo", pojo.toString());
                             Log.e("cod", response.body().getCod());
                         }

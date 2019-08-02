@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -33,15 +34,22 @@ public class CurrentWeatherFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_current_weather, container, false);
+        return inflater.inflate(R.layout.list_items_current_weather, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        final RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
-        recyclerView.setLayoutManager(linearLayoutManager);
+        final TextView city1,  speed, temp, weatherDescription, lat, lng;
+        city1=view.findViewById(R.id.cityName);
+        speed=view.findViewById(R.id.speed);
+        temp=view.findViewById(R.id.temp);
+        weatherDescription=view.findViewById(R.id.description);
+        lat=view.findViewById(R.id.lat);
+        lng=view.findViewById(R.id.lng);
+       // final RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
+      //  LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
+      //  recyclerView.setLayoutManager(linearLayoutManager);
         APIInit apiInit = new APIInit();
         apiInit.initRetrofit();
         APIInterface apiInterface = apiInit.getClient();
@@ -56,7 +64,14 @@ public class CurrentWeatherFragment extends Fragment {
                             Log.e("cod", String.valueOf(response.body().getCod()));
                         }
                         adapterCurrentWeather=new RVAdapterCurrentWeather(getContext(),example);
-                        recyclerView.setAdapter(adapterCurrentWeather);
+                        city1.setText(example.getName());
+                        weatherDescription.setText("description: "+example.getWeather().get(0).getDescription());
+                        speed.setText("speed:"+example.getWind().getSpeed());
+                        lat.setText("latitude: "+example.getCoord().getLat());
+                        lng.setText("longitude: "+example.getCoord().getLon());
+                        temp.setText("temp: "+example.getMain().getTemp());
+
+                        // recyclerView.setAdapter(adapterCurrentWeather);
                     }
 
 
