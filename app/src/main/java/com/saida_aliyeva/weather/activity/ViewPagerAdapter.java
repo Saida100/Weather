@@ -1,9 +1,12 @@
-package com.saida_aliyeva.weather;
+package com.saida_aliyeva.weather.activity;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
+
+import com.saida_aliyeva.weather.fragment.CurrentWeatherFragment;
+import com.saida_aliyeva.weather.fragment.DailyWeatherFragment;
 
 public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 

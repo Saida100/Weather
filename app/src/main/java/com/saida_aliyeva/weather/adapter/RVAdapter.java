@@ -1,4 +1,4 @@
-package com.saida_aliyeva.weather;
+package com.saida_aliyeva.weather.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,7 +8,9 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.List;
+import com.saida_aliyeva.weather.R;
+import com.saida_aliyeva.weather.adapter.viewholder.RVViewHolder;
+import com.saida_aliyeva.weather.model.POJO;
 
 
 public class RVAdapter extends RecyclerView.Adapter<RVViewHolder> {
@@ -31,7 +33,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull RVViewHolder holder, int position) {
-        holder.bind(pojo.getList().get(position), pojo.getCity());
+        holder.bind(pojo.getList().get(position));
 
     }
 

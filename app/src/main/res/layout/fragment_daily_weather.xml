@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".CurrentWeatherFragment">
+    tools:context=".fragment.CurrentWeatherFragment">
 
     <TextView
         android:id="@+id/cityName"
@@ -14,8 +14,9 @@
         android:layout_marginBottom="15dp"
         android:background="#F3CFF3"
         android:textColor="#000"
-        android:gravity="center"
-        android:textSize="22sp" />
+        android:gravity="left"
+        android:layout_marginLeft="5dp"
+        android:textSize="20sp" />
 
     <!-- TODO: Update blank fragment layout -->
     <androidx.recyclerview.widget.RecyclerView

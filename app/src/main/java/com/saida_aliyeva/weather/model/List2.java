@@ -1,4 +1,4 @@
-package com.saida_aliyeva.weather;
+package com.saida_aliyeva.weather.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -25,6 +25,7 @@ public class List2 {
     @Expose
 
     private String dt_txt;
+
 
     public String getDt_txt() {
         return dt_txt;

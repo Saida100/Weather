@@ -1,6 +1,4 @@
-package com.saida_aliyeva.weather;
-
-import com.google.gson.Gson;
+package com.saida_aliyeva.weather.api;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;

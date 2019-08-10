@@ -1,4 +1,4 @@
-package com.saida_aliyeva.weather;
+package com.saida_aliyeva.weather.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
