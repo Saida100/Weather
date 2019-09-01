@@ -15,10 +15,10 @@ public class Main2ActivityTabLayout extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2_tab_layout);
 
-        TabLayout tableLayout = findViewById(R.id.tabLayout);
+        TabLayout tabLayout = findViewById(R.id.tabLayout);
         ViewPager viewPager = findViewById(R.id.viewPager);
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(viewPagerAdapter);
-        tableLayout.setupWithViewPager(viewPager);
+        tabLayout.setupWithViewPager(viewPager);
     }
 }

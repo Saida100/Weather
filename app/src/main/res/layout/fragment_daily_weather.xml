@@ -7,16 +7,144 @@
     android:orientation="vertical"
     tools:context=".fragment.CurrentWeatherFragment">
 
+
     <TextView
         android:id="@+id/cityName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
         android:background="#F3CFF3"
+        android:layout_gravity="center"
+        android:gravity="center"
         android:textColor="#000"
-        android:gravity="left"
-        android:layout_marginLeft="5dp"
         android:textSize="20sp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#F3CFF3"
+        >
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/wind_speed"
+            android:layout_marginLeft="5dp"/>
+
+        <TextView
+            android:id="@+id/wind_speed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:background="#F3CFF3"
+            android:gravity="center"
+            android:textColor="#000"
+            android:textSize="18sp"
+            android:text="wind speed:meter/sec"/>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#F3CFF3"
+        >
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/temp"
+            android:layout_marginLeft="5dp"/>
+
+        <TextView
+            android:id="@+id/temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:background="#F3CFF3"
+            android:gravity="left"
+            android:textColor="#000"
+            android:textSize="18sp"
+            android:text="temp:°C"/>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#F3CFF3"
+        >
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/rain"
+            android:layout_marginLeft="5dp"/>
+
+        <TextView
+            android:id="@+id/rain_volume"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:background="#F3CFF3"
+            android:gravity="left"
+            android:textColor="#000"
+            android:textSize="18sp"
+            android:text="rain volume:mm"/>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#F3CFF3"
+        >
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/humidity"
+            android:layout_marginLeft="5dp"/>
+
+        <TextView
+            android:id="@+id/humidity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:background="#F3CFF3"
+            android:gravity="left"
+            android:textColor="#000"
+            android:textSize="18sp"
+            android:text="humidity:%"/>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#F3CFF3"
+        >
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/weather_desc2"
+            android:layout_marginLeft="5dp"/>
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:background="#F3CFF3"
+            android:gravity="left"
+            android:textColor="#000"
+            android:textSize="18sp"
+            android:text="description"/>
+
+
+    </LinearLayout>
+
 
     <!-- TODO: Update blank fragment layout -->
     <androidx.recyclerview.widget.RecyclerView
